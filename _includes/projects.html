@@ -11,7 +11,13 @@
         let postsHtml = '<br>';
 
         $.each(response.items, function (k, item) {
-          console.log(k);
+          let $description = $(item.description);
+
+          //trim the string to the maximum length
+          let trimmedDescription = $description.text().substr(0, 300);
+
+          //re-trim if we are in the middle of a word
+          trimmedDescription = trimmedDescription.substr(0, Math.min(trimmedDescription.length, trimmedDescription.lastIndexOf(" ")))
 
           let post = `
             <div class="${ k % 2 === 0 ? 'blog-card' : 'blog-card alt'}">
@@ -24,7 +30,7 @@
               </ul>
               <div class="description">
                 <h3>${item.title}</h3>
-                <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+                <p class="summary">${trimmedDescription}</p>
                 <a href="${item.link}">Read More</a>
               </div>
             </div>
@@ -37,38 +43,7 @@
   });
 </script>
 
-
 <div class="user-details">
   <h1> Recent Posts </h1>
 </div>
 <div id="content"></div>
-
-
-<!-- <div class="user-projects">
-  <div class="images-right">
-    <img alt="mountains" src="{{ " /assets/img/mountains.jpg " | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents">
-    <h3> Project Title </h3>
-    <ul>
-      <li> Featured Skills</li>
-    </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a class="project-link" href="#">Check it out</a>
-  </div>
-</div>
-<div class="user-projects">
-  <div class="images-left">
-    <img alt="mountains" src="{{ " /assets/img/skate.jpg " | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3> Project Title </h3>
-    <ul>
-      <li> Featured Skills</li>
-    </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a class="project-link" href="#">Check it out</a>
-  </div>
-</div> -->
