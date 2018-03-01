@@ -6,14 +6,18 @@ description: Rahul Bhammarker
 
 # User settings
 username: Rahul Bhammarker
-user_description: A Techonolgy Enthusiast and an Art Lover.
-user_title: Software Developer
+user_description: I've got chops in all phases of the development process.
+user_title: Web Developer
 email: bhammarkerrahul@gmail.com
 twitter_username: https://twitter.com/Bhammarkerrahul
 github_username:  https://github.com/RahulBhammarker
 linkedin_username: https://www.linkedin.com/in/rahulbhammarker/
 medium_username: https://medium.com/@bhammarkerrahul
 gplus_username: 
+
+aboutCode: I love javascript and coding in it since before I've started my career. I have high expertise and experience in javascript frameworks like Angular and React.
+aboutDesign: I design the interfaces focusing on content structure, intuitive UI patterns and simple interactions. I'm a minimalist who truly believes that less is more.
+aboutTools: I am a technology enthusiast and love to explore every bit of the application building process. I am comfortable with these tools and always open to add new ones in the list.
 
 # Google-analytics
 google-analytics:
